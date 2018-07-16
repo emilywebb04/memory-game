@@ -1,6 +1,46 @@
 /*
  * Create a list that holds all of your cards
  */
+const icons = ['.fa fa-diamond', '.fa fa-paper-plane-o', '.fa fa-anchor', '.fa fa-bolt',
+ '.fa fa-cube', '.fa fa-anchor', '.fa fa-leaf', '.fa fa-bicycle', '.fa fa-diamond',
+ '.fa fa-bomb', '.fa fa-leaf', '.fa fa bomb', '.fa fa-bolt', '.fa fa-bicycle', '.fa fa-paper-plane-o',
+ '.fa fa-cube'];
+const card = document.getElementsByClassName('.card')
+const deck = document.querySelector('.deck');
+let flippedCards = [];
+
+//function flip(){
+  deck.addEventListener('click', function(e) {
+    const target = e.target;
+    if(target.classList.contains('card') && flippedCards.length < 2) {
+      toggleClass(target);
+    }
+});
+
+function toggleClass(target) {
+    target.classList.toggle('open');
+    target.classList.toggle('show');
+    flippedCards.push(target);
+    compareCards();
+};
+
+
+function compareCards(){
+  if(flippedCards[0].firstElementChild.className === flippedCards[1].firstElementChild.className){
+    console.log(flippedCards);
+    flippedCards[0].classList.toggle('match');
+    flippedCards[1].classList.toggle('match');
+    flippedCards = [];
+    //matchingClass();
+  } else {
+    //card.classList.remove('open', 'show');
+    console.log('not a match!');
+    toggleClass(flippedCards[0]);
+    toggleClass(flippedCards[1]);
+    flippedCards = [];
+
+  }
+};
 
 
 /*
@@ -9,23 +49,49 @@
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+/* function startGame(){
+   shuffle();
+
+   }
+*/
+
+
+
+
+/*function match(e){
+  if()
+} */
+
+
+
+/*const restart = document.getElementsByClassName('restart');
+restart.addEventListener('click', function(e){
+  reset();
+}) */
+
+
 
 // Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+function shuffle(icons) {
+    var currentIndex = icons.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
+        temporaryValue = cards[currentIndex];
+        cards[currentIndex] = cards[randomIndex];
+        cards[randomIndex] = temporaryValue;
     }
 
-    return array;
-}
+    return deck;
+  };
 
 
+/*const card = document.getElementsByClassName('card');
+card.addEventListener('click', function(e){
+
+})
+*/
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
