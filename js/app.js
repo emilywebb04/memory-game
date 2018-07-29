@@ -36,7 +36,7 @@ function toggleClass(target) {
     flippedCards.push(target);
     compareCards();
 };
-
+//function compareCards from https://www.diigo.com/outliner/fii42b/Udacity-Memory-Game-Project?key=dwj0y5x9cw
 function compareCards(){
   if(flippedCards.length === 2){
     addMoves();
