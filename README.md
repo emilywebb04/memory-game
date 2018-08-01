@@ -14,7 +14,5 @@ Click on cards to try to find a match. If the two cards you choose do not match 
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
-||||||| merged common ancestors
-=======
-# memory-game
->>>>>>> fc1bc7fc6ee0e643c6496f39f32edfefaa2b53b0
+
+
