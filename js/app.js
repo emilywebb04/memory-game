@@ -1,5 +1,6 @@
 const card = document.getElementsByClassName('.card')
 const deck = document.querySelector('.deck');
+//const matchedCards = document.querySelectorAll('.deck li');
 let flippedCards = [];
 let moves = 0;
 let clockOff = true;
@@ -11,7 +12,7 @@ const TOTAL_PAIRS = 8;
 
 
 deck.addEventListener('click', event => {
-  const target = event.target;
+  let target = event.target;
     if(isClickValid(target)) {
         if(clockOff) {
           startTimer();
@@ -164,6 +165,7 @@ function resetGame() {
   resetMoves();
   resetStars();
   shuffleDeck();
+  resetCards();
 }
 
 function resetClockAndTime() {
