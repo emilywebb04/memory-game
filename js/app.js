@@ -166,6 +166,7 @@ function resetGame() {
   resetStars();
   shuffleDeck();
   resetCards();
+  flippedCards = [];
 }
 
 function resetClockAndTime() {
